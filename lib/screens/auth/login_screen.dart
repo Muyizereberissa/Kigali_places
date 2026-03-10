@@ -101,7 +101,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 onPressed: () async {
 
-                 
+                  setState(() => isLoading = true);
+
+                  bool success = await auth.login(
+                    emailController.text.trim(),
+                    passwordController.text.trim(),
+                  );
 
                   setState(() => isLoading = false);
 
