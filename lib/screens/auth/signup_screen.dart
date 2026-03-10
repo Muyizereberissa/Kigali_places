@@ -116,6 +116,10 @@ class _SignupScreenState extends State<SignupScreen> {
 
                   setState(() => isLoading = true);
 
+                  await auth.signUp(
+                    emailController.text.trim(),
+                    passwordController.text.trim(),
+                  );
 
                   setState(() => isLoading = false);
 
