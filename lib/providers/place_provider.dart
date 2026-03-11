@@ -5,6 +5,11 @@ import '../services/firestore_service.dart';
 class PlaceProvider extends ChangeNotifier {
   final FirestoreService _service = FirestoreService();
 
+  List<Place> _places = [];
+  bool _isLoading = false;
+
+  List<Place> get places => _places;
+  bool get isLoading => _isLoading; 
 
   PlaceProvider() {
     listenToPlaces();
@@ -12,7 +17,7 @@ class PlaceProvider extends ChangeNotifier {
 
   void listenToPlaces() {
     print("Listening to Firestore...");
-  
+    _isLoading = true; 
     notifyListeners();
 
     _service.getPlaces().listen((data) {
