@@ -143,11 +143,7 @@ class _MyListingsScreenState extends State<MyListingsScreen> {
                                   },
                                 ),
 
-                                IconButton(
-                                  icon: Icon(Icons.delete, color: Colors.red),
-                                  onPressed: () {
-                                    provider.deletePlace(place.id);
-                                  },
+                                
                                 ),
                               ],
                             ),
