@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
 import '../../providers/place_provider.dart';
-// import '../../models/place_model.dart';
-// import '../../widgets/place_card.dart';
 import 'add_place_screen.dart';
 import 'edit_place_screen.dart';
 import '../details/place_detail_screen.dart';
@@ -58,7 +55,6 @@ class _MyListingsScreenState extends State<MyListingsScreen> {
           );
         },
       ),
-
       body: Padding(
         padding: EdgeInsets.all(10),
         child: Column(
@@ -143,7 +139,11 @@ class _MyListingsScreenState extends State<MyListingsScreen> {
                                   },
                                 ),
 
-                                
+                                IconButton(
+                                  icon: Icon(Icons.delete, color: Colors.red),
+                                  onPressed: () {
+                                    provider.deletePlace(place.id);
+                                  },
                                 ),
                               ],
                             ),
