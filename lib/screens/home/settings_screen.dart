@@ -7,7 +7,7 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  bool locationNotificationsEnabled = false; // simulated preference
+  bool locationNotificationsEnabled = false; 
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Profile Section
                   Text(
                     "Profile Information",
                     style: TextStyle(
@@ -51,7 +50,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                   Divider(height: 32),
 
-                  // Notification Toggle
                   Text(
                     "Notifications",
                     style: TextStyle(
@@ -68,7 +66,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         locationNotificationsEnabled = value;
                       });
 
-                      // Simulate saving preference (can later persist in shared_preferences)
                       print(
                           "Location-based notifications: $locationNotificationsEnabled");
                     },
