@@ -27,21 +27,18 @@ class MapScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            // Map placeholder
             Container(
               height: 300,
               color: Colors.grey[300],
               child: Center(
                 child: Text(
-                  "Map placeholder\n(Google Maps API not required for this assignment)",
+                  "Map placeholder",
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 16, color: Colors.black54),
                 ),
               ),
             ),
             SizedBox(height: 20),
-
-            // Listing markers as clickable items
             Expanded(
               child: ListView.builder(
                 itemCount: provider.places.length,
@@ -56,7 +53,6 @@ class MapScreen extends StatelessWidget {
                       subtitle: Text(place.address),
                       trailing: Icon(Icons.arrow_forward_ios, size: 16),
                       onTap: () {
-                        // Open PlaceDetailScreen
                         Navigator.push(
                           context,
                           MaterialPageRoute(
