@@ -33,7 +33,6 @@ class _DirectoryScreenState extends State<DirectoryScreen> {
     final provider = Provider.of<PlaceProvider>(context);
     List<Place> places = provider.places;
 
-    /// SEARCH FILTER
     if (searchText.isNotEmpty) {
       places = places
           .where((p) =>
@@ -56,15 +55,12 @@ class _DirectoryScreenState extends State<DirectoryScreen> {
 
       body: Column(
         children: [
-
-          /// HEADER SECTION
           Container(
             color: const Color(0xFF0B2A4A),
             padding: const EdgeInsets.all(12),
             child: Column(
               children: [
 
-                /// CATEGORY FILTER
                 SizedBox(
                   height: 40,
                   child: ListView(
@@ -91,8 +87,6 @@ class _DirectoryScreenState extends State<DirectoryScreen> {
                 ),
 
                 const SizedBox(height: 10),
-
-                /// SEARCH BAR
                 TextField(
                   decoration: InputDecoration(
                     hintText: "Search for a service",
